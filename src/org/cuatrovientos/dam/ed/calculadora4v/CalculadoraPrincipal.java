@@ -15,7 +15,7 @@ public class CalculadoraPrincipal {
 		
 		// Pido los datos que necesito
 		System.out.print("Introduce número 1: ");
-		double num1 = scanner.nextDouble();
+		double numero1 = scanner.nextDouble();
 		System.out.print("Introduce número 2: ");
 		double num2 = scanner.nextDouble();
 		
@@ -24,22 +24,23 @@ public class CalculadoraPrincipal {
 		int operacion = scanner.nextInt();
 		switch (operacion) {
 			case 1:
-				resultado = sumar(num1, num2);
+				resultado = sumar(numero1, num2);
 				break;
 			case 2:
-				resultado = restar(num1, num2);
+				resultado = restar(numero1, num2);
 				break;
 			case 3:
-				resultado = multiplicar(num1, num2);
+				resultado = multiplicar(numero1, num2);
 				break;
 			case 4:
-				resultado = dividir(num1, num2);
+				resultado = dividir(numero1, num2);
 				break;
 			default:
 				System.out.println("ERROR! Tienes que elegir una de las opciones disponibles...");
 				break;
 		}
-		//TODO Crear case para operar raices cuadradas
+		//TODO Crear caso para operar raices cuadradas
+		
 		
 		// Resultado
 		if (Double.isNaN(resultado)) // Nunca utilizar la comparacion == con Double.NaN, porque no cumple estándar
@@ -47,7 +48,7 @@ public class CalculadoraPrincipal {
 			System.err.println("No he podido obtener un resultado valido");
 		else
 			System.out.println("Enhorabuena!!! Tu resultado es: " + resultado);
-		//FIXME Solucionar bug
+		
 
 		scanner.close();
 	}
@@ -82,6 +83,7 @@ public class CalculadoraPrincipal {
 		if (operando2 == 0) {
 			System.err.println("No podemos dividor por 0!!!!");
 			return Double.NaN;
+			//FIXME Solucionar bug
 		}
 		// Si no devuelve el resultado de la division
 		return operando1 / operando2;
